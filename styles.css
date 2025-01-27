@@ -12,7 +12,6 @@ body {
 
 .screen{
     display: flex;
-    margin: 20px;
     flex-grow: 1;
     height: 100px;
     border: 2px solid black;
@@ -51,3 +50,18 @@ input{
     border: 3px solid black;
 }
 
+.upper_half{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    align-items: center;
+    margin: 20px;
+    gap: 15px;
+}
+
+.clr_del_btn{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-height: 100px;;
+}
