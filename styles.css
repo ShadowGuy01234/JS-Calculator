@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas {
+    width: 500px;
+    height: 550px;
+    border: 2px solid black;
+}
+
+.screen{
+    display: flex;
+    margin: 20px;
+    flex-grow: 1;
+    height: 100px;
+    border: 2px solid black;
+}
+
+.numpad{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    justify-content:space-around;
+    gap: 10px;
+    flex-grow: 1;
+    height: 380px;
+    border: 2px solid black;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+input{
+    display: flex;
+    flex: 1;
+    font-size: large;
+    font-weight:800;
+}
+
+.num{
+    display: flex;
+    border-radius: 30%;
+    overflow: hidden;
+    height: 50px;
+    width: 50px;
+    border: 3px solid black;
+}
+
