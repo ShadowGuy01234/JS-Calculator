@@ -56,6 +56,6 @@ function mul(a, b) {
 }
 
 function div(a, b) {
-    if (b === 0) return "Error";
+    if (b === '0') return "If you’re trying to break me, you’ll have to try harder. 😎";
     return Number(a) / Number(b);
 }
