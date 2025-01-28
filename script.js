@@ -5,11 +5,20 @@ function handleNum(num) {
 
 function operate(operator) {
     let dislpay = document.querySelector(".OnDisplay");
+    let content = dislpay.innerHTML;
+    let params = content.split(" ");
+    if (params.length >= 3) {
+        calc(params);
+    }
     dislpay.append(` ` + operator + ` `);
 }
 
 function calc(arr) {
     let dislpay = document.querySelector(".OnDisplay");
+    if (arr.length != 3) {
+        dislpay.innerHTML = 'Error';
+        return false;
+    }
     dislpay.innerHTML = '';
     let num1 = arr[0];
     let num2 = arr[2];
@@ -56,6 +65,9 @@ function mul(a, b) {
 }
 
 function div(a, b) {
-    if (b === '0') return "If you’re trying to break me, you’ll have to try harder. 😎";
+    if (b === '0') {
+        window.alert( "If you’re trying to break me, you’ll have to try harder. 😎");
+        return "";
+    }
     return Number(a) / Number(b);
 }
