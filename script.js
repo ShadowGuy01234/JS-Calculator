@@ -5,14 +5,16 @@ function handleNum(num) {
 
 function operate(operator) {
     let dislpay = document.querySelector(".OnDisplay");
-    let num1 = dislpay.innerHTML;
-    dislpay.append(operator);
-
+    dislpay.append(` ` + operator + ` `);
 }
 
-function calc(num1, num2, op) {
+function calc(arr) {
     let dislpay = document.querySelector(".OnDisplay");
     dislpay.innerHTML = '';
+    let num1 = arr[0];
+    let num2 = arr[2];
+    let op = arr[1];
+
     switch (op) {
         case '+':
             dislpay.append(add(num1, num2));
@@ -30,7 +32,10 @@ function calc(num1, num2, op) {
 }
 
 function handleCalc() {
-
+    let dislpay = document.querySelector(".OnDisplay");
+    let content = dislpay.innerHTML;
+    let params = content.split(" ");
+    calc(params);
 }
 
 function handleClear() {
