@@ -7,6 +7,10 @@ function operate(operator) {
     let dislpay = document.querySelector(".OnDisplay");
     let content = dislpay.innerHTML;
     let params = content.split(" ");
+    if (dislpay.innerHTML.length == 0) {
+        handleClear();
+        return;
+    }
     if (params.length >= 3) {
         calc(params);
     }
