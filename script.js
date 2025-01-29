@@ -57,12 +57,12 @@ function handleClear() {
 }
 
 function handleDelete() {
-    console.log("Yes");
     let dislpay = document.querySelector(".OnDisplay");
     let content = dislpay.innerHTML.split("");
     let lastElem = content.pop();
-    if (lastElem == ' ') {
-        content.pop() * 2;
+    if (lastElem == ' ' || lastElem == '+' || lastElem == '-' || lastElem == '*' || lastElem == '÷') {
+        content.pop();
+        content.pop();
     }
     dislpay.innerHTML = content.join("");
 }
