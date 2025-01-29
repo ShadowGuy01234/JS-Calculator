@@ -24,6 +24,7 @@ function calc(arr) {
     let dislpay = document.querySelector(".OnDisplay");
     if (arr.length != 3) {
         dislpay.innerHTML = 'Error';
+        setTimeout(handleClear, 1000);
         return false;
     }
     dislpay.innerHTML = '';
@@ -97,7 +98,7 @@ function mul(a, b) {
 
 function div(a, b) {
     if (b === '0') {
-        window.alert( "If you’re trying to break me, you’ll have to try harder. 😎");
+        window.alert( "If you’re trying to break me, you’ll have to try harder.");
         return "";
     }
     return Number(a) / Number(b);
