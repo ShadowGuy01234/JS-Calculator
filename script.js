@@ -56,6 +56,17 @@ function handleClear() {
     dislpay.innerHTML = '';
 }
 
+function handleDelete() {
+    console.log("Yes");
+    let dislpay = document.querySelector(".OnDisplay");
+    let content = dislpay.innerHTML.split("");
+    let lastElem = content.pop();
+    if (lastElem == ' ') {
+        content.pop() * 2;
+    }
+    dislpay.innerHTML = content.join("");
+}
+
 function add(a, b) {
     return Number(a) + Number(b);
 }
