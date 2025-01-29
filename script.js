@@ -67,6 +67,19 @@ function handleDelete() {
     dislpay.innerHTML = content.join("");
 }
 
+function handleDecimal() {
+    let dislpay = document.querySelector(".OnDisplay");
+    let content = dislpay.innerHTML.split(" ");
+    content.forEach((currValue) => {
+        if (currValue.includes('.') || currValue.includes('+') || currValue.includes('-') || currValue.includes('*') || currValue.includes('÷')) {
+            return;
+        }
+        else {
+            dislpay.append('.');
+        }
+    })
+}
+
 function add(a, b) {
     return Number(a) + Number(b);
 }
