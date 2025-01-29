@@ -1,9 +1,12 @@
+let istoggled = true;
+
 function handleNum(num) {
     let dislpay = document.querySelector(".OnDisplay");
     dislpay.append(num);
 }
 
 function operate(operator) {
+    istoggled = true;
     let dislpay = document.querySelector(".OnDisplay");
     let content = dislpay.innerHTML;
     let params = content.split(" ");
@@ -54,6 +57,7 @@ function handleCalc() {
 function handleClear() {
     let dislpay = document.querySelector(".OnDisplay");
     dislpay.innerHTML = '';
+    istoggled = true;
 }
 
 function handleDelete() {
@@ -64,20 +68,19 @@ function handleDelete() {
         content.pop();
         content.pop();
     }
+    if (lastElem == '.') {
+        istoggled = true;
+    }
     dislpay.innerHTML = content.join("");
 }
 
+
 function handleDecimal() {
     let dislpay = document.querySelector(".OnDisplay");
-    let content = dislpay.innerHTML.split(" ");
-    content.forEach((currValue) => {
-        if (currValue.includes('.') || currValue.includes('+') || currValue.includes('-') || currValue.includes('*') || currValue.includes('÷')) {
-            return;
-        }
-        else {
-            dislpay.append('.');
-        }
-    })
+    if (istoggled == true) {
+        dislpay.append('.')
+        istoggled = !istoggled;
+    }
 }
 
 function add(a, b) {
