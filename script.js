@@ -1,11 +1,15 @@
 let istoggled = true;
+let isNumToggled = true;
 
 function handleNum(num) {
     let dislpay = document.querySelector(".OnDisplay");
-    dislpay.append(num);
+    if (isNumToggled == true) {
+        dislpay.append(num);
+    }
 }
 
 function operate(operator) {
+    isNumToggled = true;
     istoggled = true;
     let dislpay = document.querySelector(".OnDisplay");
     let content = dislpay.innerHTML;
@@ -52,16 +56,19 @@ function handleCalc() {
     let dislpay = document.querySelector(".OnDisplay");
     let content = dislpay.innerHTML;
     let params = content.split(" ");
+    isNumToggled = false;
     calc(params);
 }
 
 function handleClear() {
+    isNumToggled = true;
     let dislpay = document.querySelector(".OnDisplay");
     dislpay.innerHTML = '';
     istoggled = true;
 }
 
 function handleDelete() {
+    isNumToggled = true;
     let dislpay = document.querySelector(".OnDisplay");
     let content = dislpay.innerHTML.split("");
     let lastElem = content.pop();
